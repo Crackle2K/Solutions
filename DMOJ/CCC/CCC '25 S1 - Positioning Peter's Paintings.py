@@ -1,4 +1,4 @@
-inp = input("> ").split(" ")
+inp = input().split(" ")
 a = int(inp[0])
 b = int(inp[1])
 x = int(inp[2])
