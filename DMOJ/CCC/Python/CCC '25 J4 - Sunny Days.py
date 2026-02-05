@@ -1,23 +1,26 @@
 
 N = int(input())
-days = [input() for _ in range(N)]
+days = []
 
-left = 0
-rain = 0
-ans = 0
+for i in range(N):
+    days.append(input())
 
-for right in range(N):
-    if days[right] == "P":
-        rain += 1
+count = 0
+count2 = 0
+result = 0
 
-    while rain > 1:
-        if days[left] == "P":
-            rain -= 1
-        left += 1
+for i in range(N):
+    if days[i] == 'P':
+        count += 1
+    
+    while count > 1:
+        if days[count2] == "P":
+            count -= 1
+        count2 += 1
 
-    ans = max(ans, right - left + 1)
+    result = max(result, i - count2 + 1)
 
 if 'P' not in days:
-    ans -= 1
+    result -= 1
 
-print(ans)
+print(result)
